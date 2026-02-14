@@ -1,1 +1,182 @@
 # For-my-gorgeous-babyy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine’s Day ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ff6a88, #ff99ac);
+        font-family: 'Segoe UI', sans-serif;
+        overflow: hidden;
+    }
+
+    .card {
+        background: white;
+        padding: 35px;
+        border-radius: 20px;
+        text-align: center;
+        max-width: 520px;
+        max-height: 80vh;
+        overflow-y: auto;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+    h1 {
+        color: #ff4d6d;
+        margin-bottom: 15px;
+    }
+
+    p {
+        color: #555;
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: left;
+        white-space: pre-line;
+    }
+
+    .main-heart {
+        font-size: 60px;
+        animation: beat 1s infinite;
+        text-align: center;
+    }
+
+    @keyframes beat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+    }
+
+    button {
+        margin-top: 25px;
+        padding: 14px 30px;
+        border: none;
+        border-radius: 30px;
+        background: #ff4d6d;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #ff2f55;
+        transform: scale(1.05);
+    }
+
+    /* Falling hearts */
+    .heart {
+        position: fixed;
+        top: -20px;
+        pointer-events: none;
+        animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+        to {
+            transform: translateY(110vh);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="main-heart">❤️</div>
+    <h1>Happy Valentine’s Day</h1>
+
+    <p>
+First of all Happy valentines babyy^^ this is our first valentine together even through screens but dw soon we’re gonna be together each celebrations wahhhh🙈
+
+Yk babyy? minsan natatawa ako kapag naiisip ko kung paano tayo nagsimula. Out of all places in the world, out of all possible ways two people could meet… sa Mobile Legends pa talaga. Hindi café. Hindi school. Hindi party. Isang game. Isang random match. Isang simpleng pagjoin ko sa random recruitment na naging simula ng pagkakaibigan natin and the first time i called you “Mylady” that turns into “My Gorgeous Babyyy” and soon to be my wife🥹
+
+If that time someone told me that makikilala ko ang babaeng mamahalin ko ng panghabang buhay babyy, baka tinawanan ko lang. but look how we are na hehehe kenekeleg ako🙈
+
+From teammates to something more.
+From gameplay to late-night talks.
+From “Nice game” to “Nice game babyyy.”
+
+And honestly? That’s one of my favorite parts of our story.
+
+Thankyouuu babyy for all our playing together na hindi mo sinukuan kahit natatalo tayo. Kasi somehow, that reflects how you love too—hindi ka basta sumusuko. Kahit mahirap, kahit magulo, kahit pagod ka na. You stay. You try. You care. And that’s something I admire deeply about you.
+
+Minsan naiisip ko, kung life were a game, ikaw ang teammate na pipiliin ko sa bawat match. Kahit lag. Kahit toxic ang mga kasama natin. Kahit mahirap ipanalo. Kasi alam kong kapag kasama kita, hindi ako nag-iisa. May kakampi ako.
+
+At syempre, hindi mawawala ang mga moments natin na tayo lang ang nakakaintindi.
+Yung mga jokes na kahit walang sense sa iba, pero sa atin sobrang nakakatawa.
+Yung mga simpleng linya na kapag narinig ko, automatic ikaw ang naiisip ko.
+Yung mga pagkakataon na isang word mo lang, alam ko na agad ang ibig mong sabihin.
+
+Those inside jokes?
+They’re small, but they mean everything to me.
+Because they remind me that we have a world of our own.
+
+Babyyy, thank you for being patient with me. Alam kong minsan makulit ako tanong ng tanong, minsan cold, minsan sabog mag-isip and don’t know to understand things. Pero you still choose to understand me. You still choose to stay. And that kind of love? Hindi ‘yon basta-basta.
+
+I appreciate you even when you don’t see it.
+I appreciate how you care quietly.
+How you worry without saying much.
+How you love without asking for anything in return.
+
+You have this way of making me feel important without trying too hard babyy. You make me feel seen. Heard. Valued. And babyy, that’s something I will always treasure.
+
+Kung may times man na napapagod ka, I hope you remember this:
+You don’t have to be strong all the time.
+You don’t have to carry everything alone anymore owkiee??
+You have me na. Always.
+
+Sa lahat ng moments natin—mapa-seryoso man o kalokohan—I’ll cherish it. Because those moments built us even through screen. And I wouldn’t trade our story for anything else.
+
+If loving you means replaying the same match over and over again, learning from mistakes, adjusting strategies, and growing together—then I’ll gladly press “Try Again” every single time.
+
+My gorgeous babyyy, you are my favorite win.
+My favorite teammate.
+My favorite person.
+
+And this Valentine’s Day, I just want you to know:
+Hindi lang kita mahal. Pinipili kita. Araw-araw.
+
+Iloveyousomuchhhhhhhhhhhiee Babyyyy,
+More than you know, More than I can ever fully explain^^
+    </p>
+
+    <button onclick="heartRain()">Click Me 💕</button>
+</div>
+
+<script>
+function heartRain() {
+    let count = 0;
+    const interval = setInterval(() => {
+        for (let i = 0; i < 10; i++) {
+            createHeart();
+        }
+        count++;
+        if (count > 30) clearInterval(interval);
+    }, 100);
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = ["❤️","💖","💗","💘","💕"][Math.floor(Math.random() * 5)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (16 + Math.random() * 32) + "px";
+    heart.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+}
+</script>
+
+</body>
+</html>
